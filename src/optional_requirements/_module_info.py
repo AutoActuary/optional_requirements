@@ -60,7 +60,7 @@ def get_module_info(name: str) -> PythonModuleInfo:
 
     try:
         info["version"] = Version(getattr(ver, "version"))
-    except (InvalidVersion, TypeError):
+    except (InvalidVersion, TypeError, AttributeError):
         pass
 
     return info
